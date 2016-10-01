@@ -1,0 +1,26 @@
+Performing trial division to 100000000
+Starting P+1, 3 attempts for B1=300
+Starting P-1, 0 attempts for B1=300
+Starting ECM, 8 attempts for B1=300
+Starting P+1, 3 attempts for B1=2000
+Starting P-1, 1 attempts for B1=2000
+Starting ECM, 30 attempts for B1=2000
+Starting P+1, 3 attempts for B1=11000
+Starting P-1, 1 attempts for B1=11000
+Starting ECM, 74 attempts for B1=11000
+Starting P+1, 3 attempts for B1=50000
+Starting P-1, 1 attempts for B1=50000
+Starting ECM, 221 attempts for B1=50000
+Starting P+1, 3 attempts for B1=250000
+Starting P-1, 1 attempts for B1=250000
+Starting ECM, 453 attempts for B1=250000
+Starting P+1, 3 attempts for B1=1000000
+Starting P-1, 1 attempts for B1=1000000
+Starting ECM, 984 attempts for B1=1000000
+method=ecm, B1=1000000 578455732137135466812346681323546443 (prp)
+ * 866586465716584657165746753876546577 (prp)
+The factorization for
+501281908486219621910086584233925309600136539640088201223414043112175611
+is:
+   578455732137135466812346681323546443 (prp)
+ * 866586465716584657165746753876546577 (prp)
