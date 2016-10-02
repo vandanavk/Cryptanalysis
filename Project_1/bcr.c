@@ -4,7 +4,7 @@
 #include <ctype.h>
 #include <math.h>
 #include "gmp.h" //used for manipulating very large numbers
-#include "ecm.h" //used for factorization
+#include "ecm.h"
 
 #ifdef _MSC_VER
 #define FACTOR_EXE       "factor"
@@ -243,7 +243,7 @@ void find_M()
 
 	int i,j, k=0;
 	char* tmp = malloc(sizeof(3));
-	for(i=0;i+3<strlen(str);i=i+3)
+	for(i=0;i<strlen(str)-2;i=i+3)
 	{
 		tmp[0]=str[i];
 		tmp[1]=str[i+1];
