@@ -169,6 +169,11 @@ void find_N_e_C()
 	}
 	mpz_set_str (N, N_str, 10);
 	mpz_set_str (C, C_str, 10);
+	printf("\nFrom the %ld digit decimal number, split in such a way that we get N,"
+		"e, C where e is prime and the length of N and C are equal\n",
+		strlen(decrypt_book));
+
+	printf("we get N = %s,\n e = %s,\n C = %s\n", N_str, e_str, C_str);
 }
 
 /*
@@ -212,6 +217,9 @@ void find_factors()
 	mpz_init(Q);
 	mpz_set_str(P,result[0],10);
 	mpz_set_str(Q,result[1],10);
+
+	printf("Performing prime factorization on N to get P & Q\n");
+	printf("P=%s,\n Q=%s\n", result[0], result[1]);
 }
 
 /*
@@ -233,9 +241,11 @@ void find_M()
 	mpz_sub_ui (Q, Q, 1);
 	mpz_mul (totient, P, Q);
 	mpz_invert (d, e, totient);
-
+	printf("\nFind d from e and P,Q, we get");
+	gmp_printf ("\nd =  %Zd\n", d);
 	mpz_powm_sec (M, C, d, N);
-	
+	printf ("\nFrom C, d and N, we get M as\n");
+	gmp_printf ("\nM =  %Zd\n", M);
 	mpz_get_str(str, 10, M);
 	memmove(str + 1, str, strlen(str) + 1);
 	str[0]='0';
@@ -261,6 +271,8 @@ int main()
 	char* book = read_book_key("book_cipher1.txt");
 	char* token;
 	int word_count =0;
+	printf("Alice and Bob see:\n%s\n", final);
+	printf("Applying book cipher : %s\n", book);
 	token = strtok(book, "-");
 	while(token != NULL)
 	{
@@ -269,8 +281,13 @@ int main()
 	}
 	decrypt_book = malloc(sizeof(char)*strlen(final));
 	split_string_in_twos(final);
+	printf("we get \n%s\n", decrypt_book);
 	caesar();
+	printf("Applying caesar cipher: shift alphabets 11 to the right and digits 7 to the left\n");
+	printf("we get: \n%s\n", decrypt_book); 
 	convert_hex_to_dec();
+	printf("convert the result to decimal\n");
+	printf("we get \n%s\n", decrypt_book);
 	find_N_e_C();
 	find_factors();
 	find_M();

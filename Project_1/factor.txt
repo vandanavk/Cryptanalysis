@@ -1,1 +1,11 @@
 Performing trial division to 100000000
+Starting P+1, 3 attempts for B1=300
+Starting P-1, 0 attempts for B1=300
+Starting ECM, 8 attempts for B1=300
+Starting P+1, 3 attempts for B1=2000
+Starting P-1, 1 attempts for B1=2000
+Starting ECM, 30 attempts for B1=2000
+Starting P+1, 3 attempts for B1=11000
+Starting P-1, 1 attempts for B1=11000
+Starting ECM, 74 attempts for B1=11000
+No factors found
