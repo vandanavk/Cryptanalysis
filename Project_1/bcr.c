@@ -149,7 +149,7 @@ void find_N_e_C()
 		if (j==0)
 			break;
 		p=0;c=0;
-		for (k=0;k<j-2;k++) {
+		for (k=0;k<j-((strlen(decrypt_book)%2)+1);k++) {
 			N_str[k]=decrypt_book[k];
 		}
 		for (k=j;k<(strlen(decrypt_book)-j);k++) {
@@ -273,7 +273,7 @@ int main()
 	int word_count =0;
 	printf("Alice and Bob see:\n%s\n", final);
 	printf("Applying book cipher : %s\n", book);
-	token = strtok(book, "-");
+	token = strtok(book, "-\n");
 	while(token != NULL)
 	{
 		generate_book_code(token, ++word_count);
@@ -291,6 +291,5 @@ int main()
 	find_N_e_C();
 	find_factors();
 	find_M();
-
 	return 0;
 }
